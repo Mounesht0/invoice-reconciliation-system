@@ -1,8 +1,12 @@
 import pandas as pd
 
 # Load data
-invoices = pd.read_csv("../data/invoices.csv")
-payments = pd.read_csv("../data/payments.csv")
+try:
+    invoices = pd.read_csv("../data/invoices.csv")
+    payments = pd.read_csv("../data/payments.csv")
+except FileNotFoundError:
+    print("Error: Input files not found in data folder.")
+    exit()
 
 results = []
 
