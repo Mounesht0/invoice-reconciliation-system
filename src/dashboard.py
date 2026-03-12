@@ -5,7 +5,13 @@ import pandas as pd
 base_dir = os.path.dirname(__file__)
 file_path = os.path.join(base_dir, "..", "results", "reconciliation_results.csv")
 
-df = pd.read_csv(file_path)
+if os.path.exists(file_path):
+    df = pd.read_csv(file_path)
+else:
+    df = pd.DataFrame()
+
+if df.empty:
+    st.info("Upload invoice and payment files to start reconciliation.")
 
 st.title("Invoice Reconciliation Dashboard")
 
@@ -51,26 +57,30 @@ if invoice_file and payment_file:
 
     df = pd.DataFrame(results)
 
-#KPI Metrics
-matched = (df["status"] == "MATCHED").sum()
-mismatch = (df["status"] == "MISMATCH").sum()
-duplicate = (df["status"] == "DUPLICATE PAYMENT").sum()
-unpaid = (df["status"] == "UNPAID").sum()
+#Updated KPI Metrics
+if not df.empty:
 
-col1, col2, col3, col4 = st.columns(4)
+    matched = (df["status"] == "MATCHED").sum()
+    mismatch = (df["status"] == "MISMATCH").sum()
+    duplicate = (df["status"] == "DUPLICATE PAYMENT").sum()
+    unpaid = (df["status"] == "UNPAID").sum()
 
-col1.metric("Matched", matched)
-col2.metric("Mismatch", mismatch)
-col3.metric("Duplicate", duplicate)
-col4.metric("Unpaid", unpaid)
+    col1, col2, col3, col4 = st.columns(4)
+
+    col1.metric("Matched", matched)
+    col2.metric("Mismatch", mismatch)
+    col3.metric("Duplicate", duplicate)
+    col4.metric("Unpaid", unpaid)
 
 #Display results
-st.subheader("Reconciliation Results")
-st.dataframe(df)
+if not df.empty:
 
-st.subheader("Invoice Amount Distribution")
-st.bar_chart(df["invoice_amount"])
+    st.subheader("Reconciliation Results")
+    st.dataframe(df)
 
-st.subheader("Invoice Status Distribution")
-status_counts = df["status"].value_counts()
-st.bar_chart(status_counts)
+    st.subheader("Invoice Amount Distribution")
+    st.bar_chart(df["invoice_amount"])
+
+    st.subheader("Invoice Status Distribution")
+    status_counts = df["status"].value_counts()
+    st.bar_chart(status_counts)
