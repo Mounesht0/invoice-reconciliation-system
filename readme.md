@@ -13,7 +13,9 @@ The system includes an **interactive Streamlit dashboard** that allows users to 
 
 # Dashboard Preview
 
-![Invoice Reconciliation Dashboard](dashboard.png)
+<p align="center">
+  <img src="dashboard.png" width="800">
+</p>
 
 ---
 
@@ -176,7 +178,7 @@ View reconciliation results
 Analyze charts and metrics
 
 Download the Excel reconciliation report
-
+```
 
 Key Learning Outcomes-
 
@@ -195,6 +197,8 @@ Structuring a project for production-style development
 Using Git and GitHub for version control
 
 
+ ---
+
 Future Improvements:
 
 Database integration (PostgreSQL / MySQL)
@@ -207,7 +211,7 @@ Automated reconciliation scheduling
 
 Deployment to cloud (Streamlit Cloud / AWS)
 
-
+---
 
 Author
 
