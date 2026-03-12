@@ -146,6 +146,7 @@ INV003,2000
 
 Clone the repository:
 
+```bash
 git clone https://github.com/YOUR_USERNAME/invoice-reconciliation-system.git
 
 Navigate to the project directory:
@@ -209,4 +210,7 @@ Deployment to cloud (Streamlit Cloud / AWS)
 
 
 Author
+
 Mounesh
+
+GitHub: https://github.com/Mounesht0
