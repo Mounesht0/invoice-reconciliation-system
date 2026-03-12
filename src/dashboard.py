@@ -1,6 +1,7 @@
 import os
 import streamlit as st
 import pandas as pd
+import io
 
 base_dir = os.path.dirname(__file__)
 file_path = os.path.join(base_dir, "..", "results", "reconciliation_results.csv")
@@ -84,3 +85,19 @@ if not df.empty:
     st.subheader("Invoice Status Distribution")
     status_counts = df["status"].value_counts()
     st.bar_chart(status_counts)
+
+# Convert dataframe to Excel
+excel_buffer = io.BytesIO()
+
+with pd.ExcelWriter(excel_buffer, engine="xlsxwriter") as writer:
+    df.to_excel(writer, index=False, sheet_name="Reconciliation")
+
+excel_data = excel_buffer.getvalue()
+
+# Download button
+st.download_button(
+    label="Download Reconciliation Report (Excel)",
+    data=excel_data,
+    file_name="reconciliation_report.xlsx",
+    mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+)
