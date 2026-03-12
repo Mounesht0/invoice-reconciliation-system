@@ -79,7 +79,7 @@ The system includes an **interactive Streamlit dashboard** that allows users to 
 
 # Project Structure
 
-
+```bash
 invoice-reconciliation-system
 │
 ├── dashboard.png
@@ -96,7 +96,7 @@ invoice-reconciliation-system
 │
 └── results
 └── reconciliation_results.csv
-
+```
 
 ---
 
@@ -178,6 +178,15 @@ View reconciliation results
 Analyze charts and metrics
 
 Download the Excel reconciliation report
+```
+
+## Quick Start
+
+```bash
+git clone https://github.com/Mounesht0/invoice-reconciliation-system.git
+cd invoice-reconciliation-system
+pip install -r requirements.txt
+python -m streamlit run src/dashboard.py
 ```
 
 Key Learning Outcomes-
