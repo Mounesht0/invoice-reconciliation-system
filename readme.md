@@ -189,36 +189,34 @@ pip install -r requirements.txt
 python -m streamlit run src/dashboard.py
 ```
 
-Key Learning Outcomes-
+## Key Learning Outcomes
 
 This project demonstrates:
 
-Financial data processing with Pandas
+- Financial data processing with Pandas
 
-Building interactive dashboards with Streamlit
+- Building interactive dashboards with Streamlit
 
-Handling real-world data issues (duplicates, mismatches, missing data)
+- Handling real-world data issues (duplicates, mismatches, missing data)
 
-Writing defensive code and error handling
+- Writing defensive code and error handling
 
-Structuring a project for production-style development
+- Structuring a project for production-style development
 
-Using Git and GitHub for version control
+- Using Git and GitHub for version control
 
-
- ---
 
 Future Improvements:
 
-Database integration (PostgreSQL / MySQL)
+- Database integration (PostgreSQL / MySQL)
 
-API-based invoice ingestion
+- API-based invoice ingestion
 
-Authentication system
+- Authentication system
 
-Automated reconciliation scheduling
+- Automated reconciliation scheduling
 
-Deployment to cloud (Streamlit Cloud / AWS)
+- Deployment to cloud (Streamlit Cloud / AWS)
 
 ---
 
