@@ -126,21 +126,21 @@ invoice-reconciliation-system
 
 ## invoices.csv
 
-
+```bash
 invoice_id,amount
 INV001,1000
 INV002,1500
 INV003,2000
-
+```
 
 ## payments.csv
 
-
+```bash
 reference,amount
 INV001,1000
 INV002,1400
 INV003,2000
-
+```
 
 ---
 
@@ -188,6 +188,7 @@ cd invoice-reconciliation-system
 pip install -r requirements.txt
 python -m streamlit run src/dashboard.py
 ```
+---
 
 ## Key Learning Outcomes
 
