@@ -5,7 +5,7 @@
 ![Pandas](https://img.shields.io/badge/Pandas-Data%20Processing-purple)
 ![License](https://img.shields.io/badge/License-MIT-green)
 
-A **Python-based financial reconciliation tool** that automatically matches invoices with payments and detects discrepancies such as mismatched amounts, duplicate payments, and unpaid invoices.
+A **Python based financial reconciliation tool** that automatically matches invoices with payments and detects discrepancies such as mismatched amounts, duplicate payments, and unpaid invoices.
 
 The system includes an **interactive Streamlit dashboard** that allows users to upload CSV files, analyze reconciliation results, visualize financial metrics, and download reports.
 
