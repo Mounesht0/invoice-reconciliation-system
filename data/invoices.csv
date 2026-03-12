@@ -1,0 +1,4 @@
+invoice_id,customer,amount,date
+INV001,ABC Ltd,10000,01/03/2025
+INV002,XYZ Ltd,8000,02/03/2025
+INV003,ABC Ltd,5000,02/03/2025
